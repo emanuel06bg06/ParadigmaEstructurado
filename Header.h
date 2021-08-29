@@ -18,12 +18,12 @@
 
 typedef struct {
     char name[MY_STRING_SIZE];
-    int idNum;
+    long int idNum;
     char paymentType;
     int days;
     int telephoneNum;
-    int accountNum;
-    char status;
+    long int accountNum;
+
 } Client;
 
 typedef struct {
@@ -45,9 +45,9 @@ typedef struct {
     Room ptrRoom;
 } Building;
 //Functions
-int **inicializarMatriz(int N, int M);
-void cargarMatriz(int **A, int N, int M);
-void mostrarMatriz(int **A, int N, int M);
+Room **inicializarMatriz(int N, int M);
+void cargarMatriz(Room **A, int N, int M, Room r);
+void mostrarMatriz(Room **A, int N, int M);
 
 
 
