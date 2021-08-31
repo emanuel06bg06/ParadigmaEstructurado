@@ -14,7 +14,7 @@ Room **inicializarMatriz(int N, int M) {
     for (i = 0; i < N; i++) {
         A[i] = (Room *) calloc(M, sizeof (Room));
     }
-
+   
     return A;
 }
 

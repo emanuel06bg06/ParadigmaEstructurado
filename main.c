@@ -13,7 +13,8 @@
 
 int main(int argc, char *argv[]) {
 
-    Client c = {"Elun Musk", 1659, 'E', 3, 68988881};
+    Client *c;
+    c= {"Elun Musk", 1659, 'E', 3, 68988881};
 
     Room **A;
     Room room = {"FULL", 'O', c};
