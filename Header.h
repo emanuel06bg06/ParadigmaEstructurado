@@ -20,7 +20,7 @@ typedef struct {
     char name[MY_STRING_SIZE];
     char idNum[MY_STRING_SIZE];
     char paymentType;//E,D,C
-    int telephoneNum;
+    long int telephoneNum;
     long int accountNum;
 
 } Client;
@@ -38,7 +38,7 @@ typedef struct {
 
 typedef struct {
     char id[MY_STRING_SIZE];
-    char status;
+    char status; //('O':ocupada,'M'-:mantenimiento,'L':libre)
     Client *ptrC;
     int numBeds;
     char classification[MY_STRING_SIZE];
@@ -49,6 +49,7 @@ typedef struct {
 Room **inicializarMatriz(int N, int M);
 void cargarMatriz(Room **A, int N, int M, Room r);
 void mostrarMatriz(Room **A, int N, int M);
+void addMatrizEnPos(Room **A, int N, int M,Room r);
 
 
 

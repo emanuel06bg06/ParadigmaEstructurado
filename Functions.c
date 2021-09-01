@@ -8,13 +8,21 @@
 
 Room **inicializarMatriz(int N, int M) {
     Room **A;
-    int i;
+    int i, j;
 
+    Room r = {"A1", 'L'};
     A = (Room **) calloc(N, sizeof (Room *));
     for (i = 0; i < N; i++) {
         A[i] = (Room *) calloc(M, sizeof (Room));
     }
-   
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            {
+                A[i][j] = r;
+            }
+        }
+    }
+
     return A;
 }
 
@@ -23,11 +31,12 @@ void cargarMatriz(Room **A, int N, int M, Room r) {
 
     for (i = 0; i < N; i++) {
         for (j = 0; j < M; j++) {
-            if (*A[i][j].id != '\0') {
-                printf("ESPACIO LLENO\n");
-            } else
- {
+
+            if (A[i][j].status == 'L') {
                 A[i][j] = r;
+            } else
+                if (A[i][j].status == 'O') {
+                printf("ocupado\n");
             }
         }
     }
@@ -38,12 +47,15 @@ void mostrarMatriz(Room **A, int N, int M) {
 
     for (i = 0; i < N; i++) {
         for (j = 0; j < M; j++) {
-            if (*A[i][j].id == '\0') {
-                printf("NULL ");
-            } else {
+            {
                 printf("%s ", A[i][j].id);
             }
         }
         printf("\n");
     }
+}
+
+void addMatrizEnPos(Room **A, int N, int M, Room r) {
+    if(A[N][M].status!='O')
+    A[N][M] = r;
 }

@@ -12,21 +12,18 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-
-    Client *c;
-    c= {"Elun Musk", 1659, 'E', 3, 68988881};
-
+    Client cliente = {"Elun Musk","1659", 'E', 321111, 68988881};
+    Client *clienteptr = &cliente;
+    //printf("%s", clienteptr->name);
     Room **A;
-    Room room = {"FULL", 'O', c};
-    Room room2 = {"A", 'O', c};
+    Room room = {"X", 'O', clienteptr,1,"C"};
+    Room room2 = {"XI", 'O', clienteptr};
     int N = 3, M = 3;
-
     A = inicializarMatriz(N, M);
-    cargarMatriz(A, N, M, room);
-
+    addMatrizEnPos(A,2,2,room);
+    addMatrizEnPos(A,0,2,room2);
     mostrarMatriz(A, N, M);
-    cargarMatriz(A, N, M, room2);
-    mostrarMatriz(A, N, M);
+   
 
     return 0;
 }
