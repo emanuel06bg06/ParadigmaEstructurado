@@ -56,6 +56,23 @@ void mostrarMatriz(Room **A, int N, int M) {
 }
 
 void addMatrizEnPos(Room **A, int N, int M, Room r) {
-    if(A[N][M].status!='O')
-    A[N][M] = r;
+    if (A[N][M].status != 'O')
+        A[N][M] = r;
+}
+
+int contarMatriz(Room **A, char o, int N, int M) {
+    int contador = 0;
+
+    for (int i = 0; i < N; i++) {
+        for (i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                {
+                    if (A[i][j].status == o) {
+                        contador = contador + 1;
+                    }
+                }
+            }
+        }
+    }
+    return contador;
 }

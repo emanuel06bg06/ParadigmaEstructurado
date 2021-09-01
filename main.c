@@ -23,6 +23,7 @@ int main(int argc, char *argv[]) {
     addMatrizEnPos(A,2,2,room);
     addMatrizEnPos(A,0,2,room2);
     mostrarMatriz(A, N, M);
+    printf("%d", contarMatriz(A,'L', N, M));
    
 
     return 0;
