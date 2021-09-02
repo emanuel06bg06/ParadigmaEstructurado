@@ -19,7 +19,7 @@
 typedef struct {
     char name[MY_STRING_SIZE];
     char idNum[MY_STRING_SIZE];
-    char paymentType;//E,D,C
+    char paymentType; //E,D,C
     long int telephoneNum;
     long int accountNum;
 
@@ -33,7 +33,7 @@ typedef struct {
     int entranceHour;
     int deparetureHour;
     float cost;
-    int statusRoom;//paga o no
+    int statusRoom; //paga o no
 } Info;
 
 typedef struct {
@@ -49,7 +49,7 @@ typedef struct {
 Room **inicializarMatriz(int N, int M);
 void cargarMatriz(Room **A, int N, int M, Room r);
 void mostrarMatriz(Room **A, int N, int M);
-void addMatrizEnPos(Room **A, int N, int M,Room r);
+void addMatrizEnPos(Room **A, int N, int M, Room r);
 
 int contarMatriz(Room **A, char o, int N, int M);
 
