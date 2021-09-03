@@ -10,8 +10,14 @@
  *
  * Created on 1 de septiembre de 2021, 22:01
  */
+#ifndef VIEW_H
+#define VIEW_H
+
 #include "Header.h"
-void mainMenu(); //principal
-void reportsMenu(); //reportes
-void profitsMenu(); //ganancias
+void mainMenu(Hotel h); //principal
+void reportsMenu(Hotel h); //reportes
+void profitsMenu(Hotel h); //ganancias
 void printReportsMenu();
+void printMainMenu();
+#endif	// VIEW_H
+

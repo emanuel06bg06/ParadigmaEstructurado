@@ -15,16 +15,17 @@ int main(int argc, char *argv[]) {
     Client cliente = {"Elun Musk", "1659", 'E', 321111, 68988881};
     Client *clienteptr = &cliente;
     //printf("%s", clienteptr->name);
-    Room **A;
     Room room = {"X", 'O', clienteptr, 1, "C"};
     Room room2 = {"XI", 'O', clienteptr};
     int N = 3, M = 3;
-    A = inicializarMatriz(N, M);
-    addMatrizEnPos(A, 2, 2, room);
-    addMatrizEnPos(A, 0, 2, room2);
-    mostrarMatriz(A, N, M);
-    printf("%d \n", contarMatriz(A, 'L', N, M));
-    mainMenu();
-    reportsMenu();
+    
+     
+   Room **A; 
+    Hotel h = {A,N,M};
+     h.hotel=inicializarMatriz(N, M);;
+    addMatrizEnPos(h.hotel, 2, 2, room);
+    addMatrizEnPos(h.hotel, 0, 2, room2);
+    mostrarMatriz(h.hotel, N, M);
+    mainMenu(h);
     return 0;
 }

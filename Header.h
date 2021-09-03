@@ -44,14 +44,19 @@ typedef struct {
     char classification[MY_STRING_SIZE];
     Info *info;
 } Room;
+typedef struct {
+    Room **hotel;
+    int n;
+    int m;
+   
+} Hotel;
 
 //Functions
 Room **inicializarMatriz(int N, int M);
 void cargarMatriz(Room **A, int N, int M, Room r);
 void mostrarMatriz(Room **A, int N, int M);
 void addMatrizEnPos(Room **A, int N, int M, Room r);
-
-int contarMatriz(Room **A, char o, int N, int M);
+int contarHabitacionesLibres(Room **A, char o, int N, int M);
 
 
 

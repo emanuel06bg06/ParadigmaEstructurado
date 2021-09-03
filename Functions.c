@@ -8,6 +8,7 @@
 
 Room **inicializarMatriz(int N, int M) {
     Room **A;
+    Hotel h;
     int i, j;
 
     Room r = {"A1", 'L'};
@@ -22,7 +23,6 @@ Room **inicializarMatriz(int N, int M) {
             }
         }
     }
-
     return A;
 }
 
@@ -60,14 +60,14 @@ void addMatrizEnPos(Room **A, int N, int M, Room r) {
         A[N][M] = r;
 }
 
-int contarMatriz(Room **A, char o, int N, int M) {
+int contarHabitacionesLibres(Room **A, char o, int N, int M) {
     int contador = 0;
 
     for (int i = 0; i < N; i++) {
         for (i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 {
-                    if (A[i][j].status == o) {
+                    if (A[i][j].status == 'L') {
                         contador = contador + 1;
                     }
                 }
