@@ -56,7 +56,8 @@ Room **inicializarMatriz(int N, int M);
 void cargarMatriz(Room **A, int N, int M, Room r);
 void mostrarMatriz(Room **A, int N, int M);
 void addMatrizEnPos(Room **A, int N, int M, Room r);
-int contarHabitacionesLibres(Room **A, char o, int N, int M);
+
+int contarHabitaciones(Hotel ho, char o);
 
 
 

@@ -60,19 +60,17 @@ void addMatrizEnPos(Room **A, int N, int M, Room r) {
         A[N][M] = r;
 }
 
-int contarHabitacionesLibres(Room **A, char o, int N, int M) {
+int contarHabitaciones(Hotel ho, char o) {
     int contador = 0;
 
-    for (int i = 0; i < N; i++) {
-        for (i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
+        for (int i = 0; i < ho.n; i++) {
+            for (int j = 0; j < ho.m; j++) {
                 {
-                    if (A[i][j].status == 'L') {
+                    if (ho.hotel[i][j].status == o) {
                         contador = contador + 1;
                     }
                 }
             }
-        }
     }
     return contador;
 }

@@ -42,6 +42,7 @@ void printReportsMenu() {
     printf("6. Pagar la habitación utilizando el No. de cédula.  \n");
     printf("7. Liberar la habitación utilizando el No. de cédula. \n");
     printf("9. Cuántos niños existen al día de hoy en el hotel.\n");
+    printf("10. Salir.\n");
     printf("*********REPORTERIA********* \n");
 
 
@@ -62,53 +63,65 @@ void printMainMenu() {
 
 void reportsMenu(Hotel h)//principal
 {
-    printReportsMenu();
     int option = -1; // Inicializar a un valor default
-    printf("Ingrese la opcion ");
-    scanf("%d", &option);
     system("clear");
-    switch (option) {
-        case 1:
+    do {
+        printReportsMenu();
+        printf("Ingrese la opcion ");
+        scanf("%d", &option);
 
-            printf("1. Cuántas habitaciones están libres \n");
+        switch (option) {
+            case 1:
+                system("clear");
+                printf("1. Cuántas habitaciones están libres \n");
+                printf("%d %s\n ", contarHabitaciones(h, 'L'), "habitaciones");
+                break;
+            case 2:
+                system("clear");
+                printf("2. Cuántas están en mantenimiento\n");
+                printf("%d %s\n ", contarHabitaciones(h, 'M'), "habitaciones");
+                break;
+            case 3:
+                system("clear");
+                printf("3. Cuántas habitaciones ocupadas\n");
+                printf("%d %s\n ", contarHabitaciones(h, 'O'), "habitaciones");
+                break;
+            case 4:
+                system("clear");
+                printf("4. Cuántas hay desocupadas por cantidad de camas.\n");
 
-            printf("%d %s\n ",contarHabitacionesLibres(h.hotel, 'L', h.m, h.n), "habitaciones");
+                break;
+            case 5:
+                system("clear");
+                printf("5. Realizar la ocupación de la habitación.   (Ingreso)\n");
 
-            break;
-        case 2:
-            printf("2. Cuántas están en mantenimiento\n");
+                break;
+            case 6:
+                system("clear");
+                printf("6. Pagar la habitación utilizando el No. de cédula.\n");
 
-            // METODO            break;
-        case 3:
-            printf("3. Cuántas habitaciones ocupadas\n");
+                break;
+            case 7:
+                system("clear");
+                printf("7. Liberar la habitación utilizando el No. de cédula.\n");
 
-            // METODO            break;
-        case 4:
-            printf("4. Cuántas hay desocupadas por cantidad de camas.\n");
+                break;
+            case 8:
+                system("clear");
+                printf("9.Cuántas personas adultas hay el día de hoy.\n");
 
-            // METODO            break;
-        case 5:
-            printf("5. Realizar la ocupación de la habitación.   (Ingreso)\n");
+                break;
+            case 9:
+                system("clear");
+                printf("9. Cuántos niños existen al día de hoy en el hotel\n");
 
-            // METODO            break;
-        case 6:
-            printf("6. Pagar la habitación utilizando el No. de cédula.\n");
-
-            // METODO            break;
-        case 7:
-            printf("7. Liberar la habitación utilizando el No. de cédula.\n");
-
-            // METODO            break;
-        case 8:
-
-            printf("9.Cuántas personas adultas hay el día de hoy.\n");
-
-            // METODO            break;
-        case 9:
-            printf("9. Cuántos niños existen al día de hoy en el hotel\n");
-
-            // METODO            break;
-        default:
-            printf("No elegiste una opcion válida\n");
-    }
+                break;
+            case 10:
+                system("clear");
+                printf("Salir");
+                break;
+            default:
+                printf("No elegiste una opcion válida\n");
+        }
+    } while (option != 10);
 }
