@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=v2
+PROJECTNAME=ParadigmaEstructurado
 
 # Active Configuration
 DEFAULTCONF=Debug
