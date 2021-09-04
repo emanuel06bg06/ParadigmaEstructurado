@@ -15,8 +15,8 @@ int main(int argc, char *argv[]) {
     Client cliente = {"Elun Musk", "1659", 'E', 321111, 68988881};
     Client *clienteptr = &cliente;
     //printf("%s", clienteptr->name);
-    Room room = {"X", 'O', clienteptr, 1, "C"};
-    Room room2 = {"XI", 'O', clienteptr};
+    Room room = {"X", 'L', clienteptr,1, "C"};
+    Room room2 = {"XI", 'L', clienteptr,2,"C"};
     int N = 3, M = 3;
     
      

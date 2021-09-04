@@ -74,3 +74,18 @@ int contarHabitaciones(Hotel ho, char o) {
     }
     return contador;
 }
+
+int contarHabitacionesCantidadDeCamas(Hotel ho, int canti){
+    int contador = 0;
+
+        for (int i = 0; i < ho.n; i++) {
+            for (int j = 0; j < ho.m; j++) {
+                {
+                    if (ho.hotel[i][j].status == 'L' && ho.hotel[i][j].numBeds==canti) {
+                        contador = contador + 1;
+                    }
+                }
+            }
+    }
+    return contador;
+}

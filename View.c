@@ -89,7 +89,10 @@ void reportsMenu(Hotel h)//principal
             case 4:
                 system("clear");
                 printf("4. Cuántas hay desocupadas por cantidad de camas.\n");
-
+                printf("Digite la cantidad de Camas.\n");
+                int canti;
+                scanf("%d", &canti);
+                printf("%d %s %d %s\n ", contarHabitacionesCantidadDeCamas(h, canti), "habitaciones libres con", canti, "de camas");
                 break;
             case 5:
                 system("clear");
