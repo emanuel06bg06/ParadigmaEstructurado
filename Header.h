@@ -41,7 +41,7 @@ typedef struct {
     char status; //('O':ocupada,'M'-:mantenimiento,'L':libre)
     Client *ptrC;
     int numBeds;
-    char classification[MY_STRING_SIZE];
+    char classification;
     Info *info;
 } Room;
 typedef struct {
@@ -59,8 +59,12 @@ void addMatrizEnPos(Room **A, int N, int M, Room r);
 
 int contarHabitaciones(Hotel ho, char o);
 int contarHabitacionesCantidadDeCamas(Hotel ho, int canti);
-
 float cancelarPorNumHabitacion(Hotel ho);
+
+
+int camasAleatorias();
+char clasificacionAleatoria();
+
 
 
 

@@ -19,5 +19,8 @@ void reportsMenu(Hotel h); //reportes
 void profitsMenu(Hotel h); //ganancias
 void printReportsMenu();
 void printMainMenu();
+
+
+void MostrarMatrizPorClasificacion(Hotel h, char c, int ca);
 #endif	// VIEW_H
 

@@ -93,6 +93,16 @@ void reportsMenu(Hotel h)//principal
                 int canti;
                 scanf("%d", &canti);
                 printf("%d %s %d %s\n ", contarHabitacionesCantidadDeCamas(h, canti), "habitaciones libres con", canti, "de camas");
+                printf("%s\n", "");
+                printf("%s\n", "Habitaciones de primera clase");               
+                MostrarMatrizPorClasificacion(h,'P',canti);
+                printf("%s\n", "");
+                printf("%s\n", "Habitaciones de segunda clase");               
+                MostrarMatrizPorClasificacion(h,'S',canti);
+                printf("%s\n", "");
+                printf("%s\n", "Habitaciones de tercera clase");               
+                MostrarMatrizPorClasificacion(h,'T',canti);
+                
                 break;
             case 5:
                 system("clear");
@@ -127,4 +137,24 @@ void reportsMenu(Hotel h)//principal
                 printf("No elegiste una opcion válida\n");
         }
     } while (option != 10);
+}
+
+
+
+void MostrarMatrizPorClasificacion(Hotel h, char c, int ca){
+    int i, j;
+
+    for (i = 0; i < h.n; i++) {
+        for (j = 0; j < h.m; j++) {
+            {   
+                if(h.hotel[i][j].classification==c && h.hotel[i][j].status == 'L' && h.hotel[i][j].numBeds == ca){
+                printf("%s\t", h.hotel[i][j].id);
+                }else{
+                 printf("%c\t", '-');
+                }
+            }
+        }
+        printf("\n");
+    }
+
 }
