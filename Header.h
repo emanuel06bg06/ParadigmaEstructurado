@@ -1,15 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/* 
- * File:   Header.h
- * Author: Emanuel Barrantes Guzmán
- *
- * Created on 24 de agosto de 2021, 19:13
- */
 #include<stdio.h>
 #include<stdlib.h>
 #include <string.h>
@@ -60,12 +49,17 @@ void addMatrizEnPos(Room **A, int N, int M, Room r);
 void ocuparHabitacion(Hotel ho, char* id, Info i, Client c);
 int contarHabitaciones(Hotel ho, char o);
 int contarHabitacionesCantidadDeCamas(Hotel ho, int canti);
-float cancelarPorNumHabitacion(Hotel ho);
+
+
+float pagarPorId(Hotel ho,char*id);
+void liberarHabitacion(Hotel ho, char* id);
 
 
 int camasAleatorias();
 char clasificacionAleatoria();
 
+int cantidadDeAdultos(Hotel h);
+int cantidadDeNinos(Hotel h);
 
 
 
