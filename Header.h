@@ -39,16 +39,15 @@ typedef struct {
 typedef struct {
     char id[4];
     char status; //('O':ocupada,'M'-:mantenimiento,'L':libre)
-    Client *ptrC;
+    Client ptrC;
     int numBeds;
     char classification;
-    Info *info;
+    Info info;
 } Room;
 typedef struct {
     Room **hotel;
     int n;
     int m;
-   
 } Hotel;
 
 //Functions
@@ -57,6 +56,8 @@ void cargarMatriz(Room **A, int N, int M, Room r);
 void mostrarMatriz(Room **A, int N, int M);
 void addMatrizEnPos(Room **A, int N, int M, Room r);
 
+
+void ocuparHabitacion(Hotel ho, char* id, Info i, Client c);
 int contarHabitaciones(Hotel ho, char o);
 int contarHabitacionesCantidadDeCamas(Hotel ho, int canti);
 float cancelarPorNumHabitacion(Hotel ho);

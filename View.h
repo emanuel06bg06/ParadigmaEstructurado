@@ -22,5 +22,8 @@ void printMainMenu();
 
 
 void MostrarMatrizPorClasificacion(Hotel h, char c, int ca);
+
+
+void ocuparHabitacionMenu(Hotel h);
 #endif	// VIEW_H
 

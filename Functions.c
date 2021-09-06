@@ -17,16 +17,18 @@ Room **inicializarMatriz(int N, int M) {
     for (i = 0; i < N; i++) {
         A[i] = (Room *) calloc(M, sizeof (Room));
     }
+        srand(time(NULL));
     for (i = 0; i < N; i++) {
         for (j = 0; j < M; j++) {
             {
+                
                 sprintf(text, "%d", i + 1);
                 sprintf(text2, "%d", j + 1);
                 Room r = {*text, *text2};
                 r.status = 'L';
-                r.classification=clasificacionAleatoria();
-                r.numBeds=camasAleatorias();
-                        A[i][j] = r;
+                r.classification = clasificacionAleatoria();
+                r.numBeds = camasAleatorias();
+                A[i][j] = r;
             }
         }
     }
@@ -59,7 +61,7 @@ void mostrarMatriz(Room **A, int N, int M) {
                 printf("%c", A[i][j].status);
                 printf("%c", A[i][j].classification);
                 printf("%d\t", A[i][j].numBeds);
-                
+
             }
         }
         printf("\n");
@@ -104,25 +106,24 @@ int contarHabitacionesCantidadDeCamas(Hotel ho, int canti) {
 int camasAleatorias() {
     int numero = rand() % 6;
 
-    if (numero <= 1) {
+    if (numero < 1) {
         numero = numero + 2;
     }
     return numero;
 }
 
 char clasificacionAleatoria() {
-
-    char clasi='T';
+    char clasi = 'T';
     int numero = rand() % 3;
     switch (numero) {
         case 0:
-            clasi='P';
+            clasi = 'P';
             break;
         case 1:
-            clasi='S';
+            clasi = 'S';
             break;
         case 2:
-            clasi='T';
+            clasi = 'T';
             break;
 
     }
@@ -130,4 +131,17 @@ char clasificacionAleatoria() {
 
 }
 
+void ocuparHabitacion(Hotel ho, char* id, Info in, Client c) {
+    for (int i = 0; i < ho.n; i++) {
+        for (int j = 0; j < ho.m; j++) {
+            if (strcmp(ho.hotel[i][j].id, id) == 0) {
+                ho.hotel[i][j].status = 'O';
+                ho.hotel[i][j].info = in;
+                ho.hotel[i][j].ptrC = c;
+                i = ho.n + 1;
+                j = ho.m + 1;
+            }
+        }
+    }
+}
 
